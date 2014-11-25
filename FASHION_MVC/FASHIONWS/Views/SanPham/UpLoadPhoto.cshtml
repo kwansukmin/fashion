@@ -1,0 +1,25 @@
+﻿@model System.Int32
+@{
+    
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UploadPhoto", "SanPham", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <article class="boxRS">
+        <fieldset class="border-Bottom">
+            <legend>&nbsp;</legend>
+            <h2 class="border-bottom-DRed">@Html.Raw(ViewBag.Message)</h2>
+            <p></p>
+            <div class="editor-label" style="width:18%"><label>Chọn hình:</label></div>
+            <div class="editor-label" style="width:80%">
+                <input type="file" name="file" style="width:400px" />   <!--Important!  Field Name phai trung voi Ben Controller la: file, Type phai la file-->
+                <input type="image" src="~/Images/upload2.png" title="Upload lên server"
+                    style="height:25px;width:32px;border:none;vertical-align:middle;" />        <!--Important! Cach Co the Su dung: Type="submit" value="Up Hinh"-->
+
+            </div>
+            <div class="alignC error">@Html.Raw(ViewBag.Error)</div>
+            <div>@Html.ActionLink("Trở Về", "Index")</div>
+        </fieldset>
+    </article> 
+}

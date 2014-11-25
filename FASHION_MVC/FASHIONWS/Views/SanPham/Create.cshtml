@@ -1,0 +1,104 @@
+﻿@model FASHIONWS.Models.SanPham
+
+@{
+    
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<article class="boxRS">
+    <h2 class="border-bottom-DRed"> @ViewBag.Message</h2>
+
+@using (Html.BeginForm()) {
+    
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>SanPham</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenSanPham)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenSanPham)
+            @Html.ValidationMessageFor(model => model.TenSanPham,"*")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MoTa)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.MoTa, 5, 20, htmlAttributes: new { @style="color:blue"})    
+            @Html.ValidationMessageFor(model => model.MoTa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DonGia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DonGia)
+            @Html.ValidationMessageFor(model => model.DonGia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GiaKM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GiaKM)
+            @Html.ValidationMessageFor(model => model.GiaKM)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.Hinh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Hinh)
+            @Html.ValidationMessageFor(model => model.Hinh)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NhomspID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("NhomspID", String.Empty)
+            @Html.ValidationMessageFor(model => model.NhomspID)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.NgayCapNhat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayCapNhat)
+            @Html.ValidationMessageFor(model => model.NgayCapNhat)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgungBan)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgungBan)
+            @Html.ValidationMessageFor(model => model.NgungBan)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.BiDanh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BiDanh)
+            @Html.ValidationMessageFor(model => model.BiDanh)
+        </div>*@
+
+        <p class="alignR">
+            <input type="submit" value="Ghi" />
+        </p>
+        <div>@ViewBag.Error</div>
+        @Html.ValidationSummary(false)
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Trở Về", "Index")
+</div>
+
+</article>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

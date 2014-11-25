@@ -1,0 +1,20 @@
+﻿@model IList<FASHIONWS.Models.SanPham>
+
+<!-- Bài tập 5.6 
+    Thể hiện|nhúng|tích hợp trên view Home/Index
+    -->
+<div class="frame frameBoxRS" >
+    <div class="bar_title borderR-tlbr alignC"> @ViewBag.Message </div>
+    <div  class="subsidecontent" >
+        <div class="customScroll content-scrollbar">
+	    <ul >
+            @foreach (var sp in Model)
+            {
+                <li>@Html.ActionLink(sp.TenSanPham,"ThongTin","SanPham",new{id=sp.SanPhamID},null)</li> 
+            }
+      
+        </ul>
+
+        </div>
+    </div>
+ </div>

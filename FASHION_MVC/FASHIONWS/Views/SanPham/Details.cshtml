@@ -1,0 +1,85 @@
+﻿@model FASHIONWS.Models.SanPham
+
+@{
+    
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<article class="boxRS">
+    <h2 class="border-bottom-DRed"> @ViewBag.Message</h2>
+
+<fieldset>
+    <legend>SanPham</legend>
+
+    @Html.DisplayForModel()
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.TenSanPham)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenSanPham)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MoTa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MoTa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonGia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonGia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GiaKM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GiaKM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Hinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nhomsp.TenNhomsp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nhomsp.TenNhomsp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayCapNhat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayCapNhat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgungBan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgungBan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BiDanh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BiDanh)
+    </div>*@
+
+    <p class="alignR">
+    @Html.ActionLink("Hiệu Chỉnh", "Edit", new { id=Model.SanPhamID }) |
+    @Html.ActionLink("Trở Về", "Index")
+</p>
+</fieldset>
+
+
+</article>

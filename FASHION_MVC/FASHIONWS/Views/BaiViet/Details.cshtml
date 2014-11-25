@@ -1,0 +1,65 @@
+﻿@model FASHIONWS.Models.BaiViet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BaiViet</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TuaBaiViet)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TuaBaiViet)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NoiDung)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NoiDung)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TheLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TheLoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HinhDaiDien)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HinhDaiDien)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayCapNhat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayCapNhat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BiDanh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BiDanh)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BaiVietID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

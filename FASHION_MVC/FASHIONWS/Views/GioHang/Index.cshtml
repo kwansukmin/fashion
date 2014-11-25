@@ -1,0 +1,57 @@
+﻿@model  List<FASHIONWS.Models.HangHoa>
+
+<!-- Bài tập 8.4-->
+	<article id="article" class="boxRS" style="min-height:260px;">
+	<h2 class="border-bottom-DRed">@ViewBag.Message</h2>
+        <p></p>
+   @if(Model!=null)
+   {
+         <div class="row borderBD"> 
+            <div class="col40" >Stt</div> 
+            <div class="col300">Tên sản phẩm</div>
+            <div class="col120">Số lượng</div> 
+            <div class="col100">Đơn giá</div> 
+            <div class="col120">Thành tiền</div> 
+            <div class="col100"></div>
+        </div> 
+ 
+        int stt = 0;
+        foreach(var p in Model) {
+            stt++;
+            <div class="row" > 
+                <div class="col40">@stt</div> 
+                <div class="col300">@p.TenHang</div> 
+                <div class="col120">
+                    @using (Html.BeginForm("Edit", "GioHang")) { 
+                        @Html.TextBox("SoLuong",p.SoLuong)
+                        @Html.Hidden("HangHoaID", p.HangHoaID) 
+                        <input type="image" src="~/Images/save.png"  title="Cập nhập số lượng"  />}</div>
+                <div class="col100">@p.DonGia.ToString("#,##0VNĐ")</div> 
+                <div class="col120">@((p.SoLuong*p.DonGia).ToString("#,##0VNĐ"))</div> 
+                <div class="col40"> 
+                    @using (Html.BeginForm("Delete", "GioHang")) {         
+                        @Html.Hidden("HangHoaID", p.HangHoaID) 
+                        <input type="image" src="~/Images/Delete2.png"  title="Xóa thông tin" />} 
+                </div> 
+            </div> 
+        } 
+         <div class="alignR" style="font-weight:bold;padding-right:120px">
+                Tổng trị giá: @ViewBag.TongTriGia
+                <a href="@Url.Action("DatMua")">Đặt mua
+                    <img src="~/Images/Checkout.png" style="height:28px;width:32px;vertical-align:bottom;" /></a>
+            </div>
+   }
+    </article>
+
+@section sidebarLeft{
+    <aside id="sidebar1">
+		<div class="subsidebar" >
+            @Html.Partial("_HoTroOnlinePartial")
+		</div>
+		
+		
+	</aside>
+}
+@section styles{
+    <link href="~/Content/CartStyle.css" rel="stylesheet" />
+    }

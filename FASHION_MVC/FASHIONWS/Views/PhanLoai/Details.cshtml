@@ -1,0 +1,36 @@
+﻿@model FASHIONWS.Models.PhanLoai
+@*khai báo tường minh cho Model Object /// Bài 4.3*@
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Phân loại - Xem thông tin chi tiết</h2>
+
+    <fieldset>
+        <legend></legend>
+        <div class="display-label">Phân loại ID:</div>
+        <div class="display-label">@Model.PhanLoaiID</div>
+
+        <div class="display-label">Tên phân loại:</div>
+        <div class="display-label">@Model.TenPhanLoai</div>
+
+        <div class="display-label">Bí danh:</div>
+        <div class="display-label">@Model.BiDanh</div>
+    </fieldset>
+
+    @*<p><!--Cách 1 -->
+        @Html.ActionLink("Hiệu chỉnh","Edit",new{id=Model.PhanLoaiID}) <!--Phương thức 2-->
+        @Html.ActionLink("Trở về","Index") <!--Phương thức 1-->
+
+
+    </p>*@
+
+    <p><!--Cách 2 -->
+        @Html.ActionLink("Trở về","Index","PhanLoai")<!--Phương thức 4 (linktext, ActionName,ControllerName)-->
+        @Html.ActionLink("Hiệu chỉnh","Index","PhanLoai",new{id=Model.PhanLoaiID},null)<!--Phương thức 7(linktext, ActionName, RouteValues, HtmlAttributes) -->
+
+    </p>
+</article>

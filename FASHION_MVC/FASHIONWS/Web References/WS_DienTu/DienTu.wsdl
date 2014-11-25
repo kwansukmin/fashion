@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocSanPham">
+        <s:complexType />
+      </s:element>
+      <s:element name="DocSanPhamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocSanPhamResult" type="tns:ArrayOfVw_SanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVw_SanPham">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="vw_SanPham" nillable="true" type="tns:vw_SanPham" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="vw_SanPham">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="SanPhamID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TenSanPham" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GioiThieu" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DonGia" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Hinh" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NhaSanXuatID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LoaiSanPhamID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NgayCapNhat" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="HetHang" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="BiDanh" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TenLoaiSanPham" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TenNhaSanXuat" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityObject" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StructuralObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StructuralObject" abstract="true" />
+      <s:complexType name="EntityKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntitySetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityContainerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKeyValues" type="tns:ArrayOfEntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DocSanPhamTheoTen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenSanPham" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocSanPhamTheoTenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocSanPhamTheoTenResult" type="tns:ArrayOfVw_SanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocSanPhamTheoNsxLoaisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NhaSanXuat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoaiSanPham" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocSanPhamTheoNsxLoaispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocSanPhamTheoNsxLoaispResult" type="tns:ArrayOfVw_SanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocSanPhamSoapIn">
+    <wsdl:part name="parameters" element="tns:DocSanPham" />
+  </wsdl:message>
+  <wsdl:message name="DocSanPhamSoapOut">
+    <wsdl:part name="parameters" element="tns:DocSanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocSanPhamTheoTenSoapIn">
+    <wsdl:part name="parameters" element="tns:DocSanPhamTheoTen" />
+  </wsdl:message>
+  <wsdl:message name="DocSanPhamTheoTenSoapOut">
+    <wsdl:part name="parameters" element="tns:DocSanPhamTheoTenResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocSanPhamTheoNsxLoaispSoapIn">
+    <wsdl:part name="parameters" element="tns:DocSanPhamTheoNsxLoaisp" />
+  </wsdl:message>
+  <wsdl:message name="DocSanPhamTheoNsxLoaispSoapOut">
+    <wsdl:part name="parameters" element="tns:DocSanPhamTheoNsxLoaispResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DienTuSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPham">
+      <wsdl:input message="tns:DocSanPhamSoapIn" />
+      <wsdl:output message="tns:DocSanPhamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPhamTheoTen">
+      <wsdl:input message="tns:DocSanPhamTheoTenSoapIn" />
+      <wsdl:output message="tns:DocSanPhamTheoTenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPhamTheoNsxLoaisp">
+      <wsdl:input message="tns:DocSanPhamTheoNsxLoaispSoapIn" />
+      <wsdl:output message="tns:DocSanPhamTheoNsxLoaispSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DienTuSoap" type="tns:DienTuSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://microsoft.com/webservices/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPham">
+      <soap:operation soapAction="http://microsoft.com/webservices/DocSanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPhamTheoTen">
+      <soap:operation soapAction="http://microsoft.com/webservices/DocSanPhamTheoTen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPhamTheoNsxLoaisp">
+      <soap:operation soapAction="http://microsoft.com/webservices/DocSanPhamTheoNsxLoaisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DienTuSoap12" type="tns:DienTuSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://microsoft.com/webservices/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPham">
+      <soap12:operation soapAction="http://microsoft.com/webservices/DocSanPham" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPhamTheoTen">
+      <soap12:operation soapAction="http://microsoft.com/webservices/DocSanPhamTheoTen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocSanPhamTheoNsxLoaisp">
+      <soap12:operation soapAction="http://microsoft.com/webservices/DocSanPhamTheoNsxLoaisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DienTu">
+    <wsdl:port name="DienTuSoap" binding="tns:DienTuSoap">
+      <soap:address location="http://test.alphatek.edu.vn/WS_DienTu/WebServices/DienTu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DienTuSoap12" binding="tns:DienTuSoap12">
+      <soap12:address location="http://test.alphatek.edu.vn/WS_DienTu/WebServices/DienTu.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

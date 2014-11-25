@@ -1,0 +1,13 @@
+﻿
+      .content-scrollbar{
+          width:99%; 
+          height:355px; 
+          overflow:auto; 
+          background:#FFFFFF; 
+            -webkit-border-radius:3px; 
+            -moz-border-radius:3px; 
+            -ms-border-radius:3px;
+            border-radius:3px;
+           
+
+      }

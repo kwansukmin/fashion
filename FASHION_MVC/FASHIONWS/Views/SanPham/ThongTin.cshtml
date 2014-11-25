@@ -1,0 +1,47 @@
+﻿<!--Do chỉ có 1 sản phẩm nên k sử dụng List
+@model FASHIONWS.Models.SanPham
+
+<!-- Bài tập 5.12 -->
+@*-- mainContent
+--------------------------------------------------------------- *@
+<section class="contentItem">
+    <div class="khungsp">
+           <img src="~/Photos/SanPham/@Model.Hinh" alt="@Model.TenSanPham" >
+           
+            <div class="thongtinsp">
+                <p>Mã sản phẩm: @Model.SanPhamID </p>
+                <p>@Model.TenSanPham</p>
+                <div class="noidung">@Html.Raw(Model.MoTa)</div> 
+                <div>
+                Đơn giá: @Model.DonGia.ToString("#,##0VNĐ") 
+                    @Html.Partial("_ChonMuaPartial",(int)Model.SanPhamID)
+              
+                </div>
+            </div>
+                    
+		</div>
+</section>
+
+ <section class="contentItem">
+   <!-- Sản phẩm cùng loại -->
+ </section>
+
+@section sidebarRight{
+    <aside id="sidebar2">
+        <div class="subsidebar" >
+			<!-- Thống kê giỏ hàng -->
+           
+		</div>	
+		<div class="subsidebar" >
+			
+            @{
+                Html.RenderAction("_TuiXachMoiPartial", "SanPham");
+              }
+             
+		</div>
+		<div class="subsidebar" >
+			
+            
+		</div>
+	</aside>
+}

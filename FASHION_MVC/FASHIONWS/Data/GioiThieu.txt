@@ -1,0 +1,9 @@
+﻿<header>
+			<h2> Chào mừng bạn đến với shop quần áo rẻ đẹp!</h2>
+    	    <h3>Hãy thỏa sức shopping online cùng shop quần áo rẻ đẹp nhé</h3>
+        </header>
+        <p>
+        Để chuẩn bị cho một ngày mới năng động và hiệu quả, bạn không thể lơ là trong việc chọn lựa cho mình một bộ cánh tươm tất và thật xinh xắn. Diện cho mình những bộ áo quần hợp thời trang, vừa thanh lịch lại vừa rất trẻ trung, duyên dáng, sành điệu… đó chính là điều mà 
+        Shop <span style="font-weight: bold">Thiên Thanh </span>muốn giới thiệu với các bạn.
+        </p>
+        <p class="readmore">&laquo;&laquo;&nbsp;&nbsp; <a href="#">Xem chi tiết</a>&nbsp;&nbsp;&raquo;&raquo;</p>

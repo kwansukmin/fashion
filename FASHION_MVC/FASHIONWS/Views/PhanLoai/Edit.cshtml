@@ -1,0 +1,46 @@
+﻿@model FASHIONWS.Models.PhanLoai
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!--Bai 4.9-->
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Phân loại - Hiệu Chỉnh</h2>
+    
+    <form id="frmPhanLoai" method="post">
+        <fieldset>
+        <legend></legend>
+        
+        @*<div class="editor-label">
+            <label for="TenPhanLoai">Phân loại ID:</label></div>
+        <div class="editor-field">
+            <input type="text" id="PhanLoaiID" name="PhanLoaiID" value="@Model.PhanLoaiID" />
+
+        </div>*@
+
+        <input type="hidden" id="PhanLoaiID" name="PhanLoaiID" value="@Model.PhanLoaiID" />
+            
+        <div class="editor-label">
+            <label for="TenPhanLoai">Tên Phân loại:</label></div>
+        <div class="editor-field">
+            <input type="text" id="TenPhanLoai" name="TenPhanLoai" value="@Model.TenPhanLoai" />
+
+        </div>
+
+
+        @*<div class="editor-label">
+            <label for="BiDanh">Bí Danh:</label></div>
+        <div class="editor-field">
+            <input type="text" id="BiDanh" name="BiDanh" value="@Model.BiDanh" />
+
+        </div>*@
+
+        <input type="hidden" id="BiDanh" name="BiDanh" value="@Model.BiDanh" />
+
+        <p class="alignR">
+            <input type="submit" value="Cập Nhật" />
+        </p>
+    </fieldset>
+    </form>
+    
+</article>

@@ -1,0 +1,46 @@
+﻿@model FASHIONWS.Models.Nhomsp
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Nhóm sản phẩm - Xem thông tin chi tiết</h2>
+
+<fieldset>
+    <legend>Nhomsp</legend>
+
+    @Html.DisplayForModel()
+    <!--Trong Nhomsp Them Dong lenh [ScaffoldColumn(false)] phia tren BiDanh để không hiện thị bí danh trong nhóm sản phẩm-->
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.TenNhomsp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenNhomsp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PhanLoai.TenPhanLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhanLoai.TenPhanLoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BiDanh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BiDanh)
+    </div>*@
+</fieldset>
+
+<p class="alignR">
+    <!--phuong thuc 2-->
+    @Html.ActionLink("Hiệu Chỉnh", "Edit", new { id=Model.NhomspID }) |
+    <!--phuong thuc 1-->
+    @Html.ActionLink("Trở Về", "Index")
+</p>
+
+</article>

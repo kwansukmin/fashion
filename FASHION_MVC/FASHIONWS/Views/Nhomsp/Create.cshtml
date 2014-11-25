@@ -1,0 +1,57 @@
+﻿@model FASHIONWS.Models.Nhomsp
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Nhóm sản phẩm - Xem thông tin chi tiết</h2>
+
+@using (Html.BeginForm()) {
+   
+
+    <fieldset>
+        <legend>Nhomsp</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenNhomsp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenNhomsp)
+            @Html.ValidationMessageFor(model => model.TenNhomsp,"*")<!--Hiển thị báo lỗi = dấu *-->
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhanLoaiID) <!--Bỏ , "PhanLoai"-->
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PhanLoaiID", String.Empty)
+            @Html.ValidationMessageFor(model => model.PhanLoaiID,"*")<!--Hiển thị báo lỗi = dấu *-->
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.BiDanh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BiDanh)
+            @Html.ValidationMessageFor(model => model.BiDanh)
+        </div>*@
+
+        <p class="alignR">
+            <input type="submit" value="Ghi" />
+        </p>
+        <p><!--Cài báo lỗi sum cho thông báo-->
+             @Html.ValidationSummary(false)
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Trở Về", "Index")
+</div>
+
+</article>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

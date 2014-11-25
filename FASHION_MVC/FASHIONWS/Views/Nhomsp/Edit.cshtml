@@ -1,0 +1,62 @@
+﻿@model FASHIONWS.Models.Nhomsp
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Hiệu Chỉnh - Nhóm sản phẩm</h2>
+
+
+@using (Html.BeginForm()) {
+    
+
+    <fieldset>
+        <legend>Nhomsp</legend>
+
+        @Html.HiddenFor(model => model.NhomspID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenNhomsp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenNhomsp)
+            @Html.ValidationMessageFor(model => model.TenNhomsp,"*")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhanLoaiID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PhanLoaiID", String.Empty)
+            @Html.ValidationMessageFor(model => model.PhanLoaiID,"*")
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.BiDanh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BiDanh)
+            @Html.ValidationMessageFor(model => model.BiDanh)
+        </div>*@
+
+        <p class="alignR">
+            <input type="submit" value="Cập Nhật" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Trở Về ", "Index")
+</div>
+
+<p>
+    @Html.ValidationSummary(false)
+</p>
+
+</article>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

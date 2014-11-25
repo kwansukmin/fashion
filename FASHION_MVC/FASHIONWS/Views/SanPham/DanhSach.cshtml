@@ -1,0 +1,35 @@
+﻿@*@model IList<FASHIONWS.Models.SanPham>*@  <!--Webgrid khong can khai bao tham so model, -->
+
+@{
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 8);
+    string path = Url.Content("~/Photos/SanPham/");
+    }
+<section class="contentItem">
+    <header class="tieude borderR-tltr">@ViewBag.Message</header>
+    @grid.GetHtml(
+    tableStyle: "dshinh", mode: WebGridPagerModes.All,numericLinksCount:6,
+    columns: grid.Columns(
+    grid.Column(format: x => (
+        Html.Raw(
+        string.Format("<a href='{4}' class='h200'><img src='{0}{1}'/>{2}</a><div>Đơn giá:{3}{5}</div>",
+        path, //0
+        x.Hinh, //1
+        x.TenSanPham,   //2
+        x.DonGia,   //3
+        Url.Action("ThongTin", "SanPham", new { id=x.SanPhamID, name=x.BiDanh}), //4
+        @Html.Partial("_ChonMuaPartial",(int)x.SanPhamID) //tham so 2-truyen tham so cho model view
+        
+        //<input type='image' src='~/Images/cart.png'  title='Chọn mua hàng'  />
+    ))))))
+</section>
+
+@section sidebarLeft{
+    <aside id="sidebar1">
+        <div class="subsidebar">
+            @Html.Action("_SanPhamMoiPartial","SanPham") <!--Su dung khi can rut san pham tu database-->
+        </div>
+        <div class="subsidebar">
+            @Html.Partial("_HoTroOnlinePartial")<!--khong can rut san pham tu database, -->
+        </div>
+    </aside>
+    }

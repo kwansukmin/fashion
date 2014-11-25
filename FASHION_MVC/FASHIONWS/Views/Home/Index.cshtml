@@ -1,0 +1,103 @@
+﻿
+
+<!-- Do chu dọng gan Title trong controller nen khong can khai bao o Day -->
+<!-- 5.2 -->
+
+<figure id="banner">
+    <div id="bangron">
+        &laquo;&laquo; @ViewBag.Message &raquo;&raquo;
+    </div>
+    <div id="slider" class="nivoSlider" style="background-color:white">
+        <img src="~/Photos/CuaHang/Cuahang_01.jpg"  title="01.Cửa hàng Thiên Thanh"/>
+        <img src="~/Photos/CuaHang/Cuahang_02.jpg" title="02.Gian hàng áo nữ"/>
+        <img src="~/Photos/CuaHang/Cuahang_03.jpg" title="03.Gian hàng áo nam"/>
+        <img src="~/Photos/CuaHang/Cuahang_04.jpg" title="04.Gian hàng áo thun nữ"/>
+        <img src="~/Photos/CuaHang/Cuahang_05.jpg" title="05.Gian hàng thời trang nữ"/>
+    </div>
+</figure>
+
+    @{Html.RenderAction("_SanPhamHotPartial", "SanPham");}
+
+
+
+
+<article id="article">
+    @Html.Raw(ViewBag.GioiThieu)
+</article>
+
+@section sidebarLeft{
+    <aside id="sidebar1">
+        <div class="subsidebar">
+            <!--5.6-->
+            <!--Cach viet 1-->
+            @*@Html.Action("_SanPhamMoiPartial","SanPham")*@
+                
+            <!--Cach viet 2-->
+            @{
+                Html.RenderAction("_SanPhamMoiPartial", "SanPham");
+              }
+        </div>
+        <div id="subsidebar">
+            @{
+                Html.Partial("_HoTroOnlinePartial");
+                }
+        </div>
+    </aside>
+    }
+
+@section styles{
+    <!--Novi Slider-->
+    @Styles.Render("~/jquery/nivo-slider/css/nivo-slider.css","~/jquery/nivo-slider/css/nivo-style.css")
+    
+
+    <!--SanPhamHotPartial-->
+    @Styles.Render("~/jquery/jcarousels/skin.css")
+
+ }
+@section scripts{
+    
+    @Scripts.Render("~/jquery/nivo-slider/jquery-1.4.4.min.js","~/jquery/nivo-slider/js/jquery.nivo.slider.pack.js")
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                effect: 'random',
+                slices: 5, //Số hình
+                animSpeed: 1000, //Slide transition speed
+                pauseTime: 3000,
+                startSlide: 0, //Set starting Slide (0 index)
+                directionNav: true //Next & Prev
+            });
+        });
+    </script>
+
+     <!--SanPhamHotPartial-->
+    @Scripts.Render("~/jquery/jcarousels/jquery.jcarousel.min.js","~/jquery/jcarousels/mycarousel.js")
+    
+    <script type="text/javascript">
+        function mycarousel_initcallback(carousel) {
+            // disable autoscrolling if the user clicks the prev or next button.
+            carousel.buttonnext.bind('click', function () {
+                carousel.startauto(0);
+            });
+
+            carousel.buttonprev.bind('click', function () {
+                carousel.startauto(0);
+            });
+
+            // pause autoscrolling if the user moves with the cursor over the clip.
+            carousel.clip.hover(function () {
+                carousel.stopauto();
+            }, function () {
+                carousel.startauto();
+            });
+        };
+        jquery(document).ready(function () {
+            jquery('#mycarousel').jcarousel({
+                vertical: false,
+                auto: 2,
+                wrap: 'last',
+                initcallback: mycarousel_initcallback
+            });
+        });
+    </script>
+}

@@ -1,0 +1,35 @@
+﻿@model FASHIONWS.Models.SanPham
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EX01Display</title>
+</head>
+<body>
+    <h2>Nguồn dữ liệu - Model Object</h2>
+    @Html.DisplayName("TenSanPham")
+    @Html.Display("TenSanPham")<br />
+
+    @Html.DisplayName("NgayCapNhat") <!--hiển thị chú thích-->
+    @Html.Display("NgayCapNhat") <!--hiển thị nội dung-->
+    @Html.DisplayText("NgayCapNhat")
+    <br />
+
+    @Html.DisplayNameFor(p=>p.DonGia)
+    @Html.DisplayFor(p=>p.DonGia)
+    <br />
+    
+    <h3>Nguồn dữ liệu -ViewBag</h3>
+    @Html.Display("TenPhanLoai")
+
+    <h3>Nguồn dữ liệu -ViewData</h3>
+    @Html.Display("Ten Nhom")
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@model IList<FASHIONWS.Models.SanPham>
+
+
+
+<div class="imghot">
+    <div class="tieude">&loz; @ViewBag.Message</div>
+    <div style="margin-top:4px">
+        <ul id="mycarousel" class="jcarousel-skin-tango">
+            @foreach (var sp in Model)
+            {
+                <li><img src="~/Photos/SanPham/@sp.Hinh"  alt="@sp.TenSanPham"/> </li>
+            }
+        </ul>
+    </div>
+</div>

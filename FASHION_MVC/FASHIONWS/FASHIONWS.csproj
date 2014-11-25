@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B72797EE-E87A-4ABE-B513-9455EA550A4F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FASHIONWS</RootNamespace>
+    <AssemblyName>FASHIONWS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaiVietController.cs" />
+    <Compile Include="Controllers\Demo17_10Controller.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Controllers\DemoHelperController.cs" />
+    <Compile Include="Controllers\DemoWebServicesController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NhapMonController.cs" />
+    <Compile Include="Controllers\NhomspController.cs" />
+    <Compile Include="Controllers\PhanLoaiController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BaiViet.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatHang.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatHangCT.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FASHION.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FASHION.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FASHION.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FASHION.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FASHION.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FashionMetadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\GioHangModels.cs" />
+    <Compile Include="Models\HopThu.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nhomsp.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanLoai.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>FASHION.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\XuLyDuLieu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_DienTu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\CartStyle.css" />
+    <Content Include="Content\FormStyle.css" />
+    <Content Include="Content\SiteGoc.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\wgStyle.css" />
+    <Content Include="Data\GioiThieu.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\FASHION.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FASHION.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Images\back.jpg" />
+    <Content Include="Images\bullet1.png" />
+    <Content Include="Images\bullet2.png" />
+    <Content Include="Images\cart.jpg" />
+    <Content Include="Images\cart.png" />
+    <Content Include="Images\Checkout.png" />
+    <Content Include="Images\Delete2.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\googlep.jpg" />
+    <Content Include="Images\img03.jpg" />
+    <Content Include="Images\LogoAdmin.jpg" />
+    <Content Include="Images\LogoFashion.gif" />
+    <Content Include="Images\main1.png" />
+    <Content Include="Images\marker.png" />
+    <Content Include="Images\NoImage.jpg" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\Search2.png" />
+    <Content Include="Images\Skype.png" />
+    <Content Include="Images\upload2.png" />
+    <Content Include="Images\upload3.png" />
+    <Content Include="Images\upload4.png" />
+    <Content Include="Images\Yahoo.png" />
+    <Content Include="Images\youTube.png" />
+    <Content Include="jquery\jcarousels\images\next-horizontal.png" />
+    <Content Include="jquery\jcarousels\images\next-vertical.png" />
+    <Content Include="jquery\jcarousels\images\prev-horizontal.png" />
+    <Content Include="jquery\jcarousels\images\prev-vertical.png" />
+    <Content Include="jquery\jcarousels\jquery-1.4.4.min.js" />
+    <Content Include="jquery\jcarousels\jquery.jcarousel.min.js" />
+    <Content Include="jquery\jcarousels\mycarousel.js" />
+    <Content Include="jquery\jcarousels\skin.css" />
+    <Content Include="jquery\jMenu\simpleMenu.js" />
+    <Content Include="jquery\jMenu\style.css" />
+    <Content Include="jquery\nivo-slider\css\nivo-slider.css" />
+    <Content Include="jquery\nivo-slider\css\nivo-style.css" />
+    <Content Include="jquery\nivo-slider\images\arrows.png" />
+    <Content Include="jquery\nivo-slider\images\bullets.png" />
+    <Content Include="jquery\nivo-slider\images\loading.gif" />
+    <Content Include="jquery\nivo-slider\images\slider.png" />
+    <Content Include="jquery\nivo-slider\jquery-1.4.4.min.js" />
+    <Content Include="jquery\nivo-slider\js\jquery.nivo.slider.pack.js" />
+    <Content Include="jquery\nivo-slider\nivo-slider.txt" />
+    <Content Include="jquery\scrollbar\CustomScrollbar.concat.min.js" />
+    <Content Include="jquery\scrollbar\CustomScrollbar.css" />
+    <Content Include="jquery\scrollbar\jquery-1.9.1.min.js" />
+    <Content Include="jquery\scrollbar\mCSB_buttons.png" />
+    <Content Include="jquery\scrollbar\style.css" />
+    <Content Include="Models\FASHION.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FASHION.edmx</DependentUpon>
+      <LastGenOutput>FASHION.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FASHION.edmx.diagram">
+      <DependentUpon>FASHION.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\FASHION.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FASHION.edmx</DependentUpon>
+      <LastGenOutput>FASHION.cs</LastGenOutput>
+    </Content>
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\FASHIONWS_MVC.pubxml" />
+    <Content Include="Photos\Baiviet\NoImage.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_01.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_02.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_03.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_04.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_05.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_06.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_07.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_08.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_09.jpg" />
+    <Content Include="Photos\Baiviet\TinTT_10.jpg" />
+    <Content Include="Photos\CuaHang\ChuThich\Titles.txt" />
+    <Content Include="Photos\CuaHang\Cuahang_01.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_02.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_03.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_04.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_05.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_06.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_07.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_08.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_09.jpg" />
+    <Content Include="Photos\CuaHang\Cuahang_10.jpg" />
+    <Content Include="Photos\SanPham\1.jpeg" />
+    <Content Include="Photos\SanPham\10.jpg" />
+    <Content Include="Photos\SanPham\100.jpg" />
+    <Content Include="Photos\SanPham\101.jpg" />
+    <Content Include="Photos\SanPham\102.jpg" />
+    <Content Include="Photos\SanPham\103.jpg" />
+    <Content Include="Photos\SanPham\104.jpg" />
+    <Content Include="Photos\SanPham\105.jpg" />
+    <Content Include="Photos\SanPham\106.jpg" />
+    <Content Include="Photos\SanPham\107.jpg" />
+    <Content Include="Photos\SanPham\108.jpg" />
+    <Content Include="Photos\SanPham\109.jpg" />
+    <Content Include="Photos\SanPham\11.jpg" />
+    <Content Include="Photos\SanPham\110.jpg" />
+    <Content Include="Photos\SanPham\111.jpg" />
+    <Content Include="Photos\SanPham\112.jpg" />
+    <Content Include="Photos\SanPham\113.jpg" />
+    <Content Include="Photos\SanPham\114.jpg" />
+    <Content Include="Photos\SanPham\115.jpg" />
+    <Content Include="Photos\SanPham\116.jpg" />
+    <Content Include="Photos\SanPham\117.jpg" />
+    <Content Include="Photos\SanPham\118.jpg" />
+    <Content Include="Photos\SanPham\119.jpg" />
+    <Content Include="Photos\SanPham\12.jpg" />
+    <Content Include="Photos\SanPham\120.jpg" />
+    <Content Include="Photos\SanPham\121.jpg" />
+    <Content Include="Photos\SanPham\122.jpg" />
+    <Content Include="Photos\SanPham\123.jpg" />
+    <Content Include="Photos\SanPham\124.jpg" />
+    <Content Include="Photos\SanPham\125.jpg" />
+    <Content Include="Photos\SanPham\126.jpg" />
+    <Content Include="Photos\SanPham\127.jpg" />
+    <Content Include="Photos\SanPham\128.jpg" />
+    <Content Include="Photos\SanPham\129.jpg" />
+    <Content Include="Photos\SanPham\13.jpg" />
+    <Content Include="Photos\SanPham\130.jpg" />
+    <Content Include="Photos\SanPham\131.jpg" />
+    <Content Include="Photos\SanPham\132.jpg" />
+    <Content Include="Photos\SanPham\133.jpg" />
+    <Content Include="Photos\SanPham\134.jpg" />
+    <Content Include="Photos\SanPham\135.jpg" />
+    <Content Include="Photos\SanPham\136.jpg" />
+    <Content Include="Photos\SanPham\137.jpg" />
+    <Content Include="Photos\SanPham\138.jpg" />
+    <Content Include="Photos\SanPham\139.jpg" />
+    <Content Include="Photos\SanPham\14.jpg" />
+    <Content Include="Photos\SanPham\140.jpg" />
+    <Content Include="Photos\SanPham\141.jpg" />
+    <Content Include="Photos\SanPham\142.jpg" />
+    <Content Include="Photos\SanPham\143.jpg" />
+    <Content Include="Photos\SanPham\144.jpg" />
+    <Content Include="Photos\SanPham\145.jpg" />
+    <Content Include="Photos\SanPham\146.jpg" />
+    <Content Include="Photos\SanPham\147.jpg" />
+    <Content Include="Photos\SanPham\148.jpg" />
+    <Content Include="Photos\SanPham\149.jpg" />
+    <Content Include="Photos\SanPham\15.jpg" />
+    <Content Include="Photos\SanPham\150.jpg" />
+    <Content Include="Photos\SanPham\151.jpg" />
+    <Content Include="Photos\SanPham\152.jpg" />
+    <Content Include="Photos\SanPham\153.jpg" />
+    <Content Include="Photos\SanPham\154.jpg" />
+    <Content Include="Photos\SanPham\155.jpg" />
+    <Content Include="Photos\SanPham\156.jpg" />
+    <Content Include="Photos\SanPham\157.jpg" />
+    <Content Include="Photos\SanPham\158.jpg" />
+    <Content Include="Photos\SanPham\159.jpg" />
+    <Content Include="Photos\SanPham\16.jpg" />
+    <Content Include="Photos\SanPham\160.jpg" />
+    <Content Include="Photos\SanPham\161.jpg" />
+    <Content Include="Photos\SanPham\162.jpg" />
+    <Content Include="Photos\SanPham\163.jpg" />
+    <Content Include="Photos\SanPham\164.jpg" />
+    <Content Include="Photos\SanPham\165.jpg" />
+    <Content Include="Photos\SanPham\166.jpg" />
+    <Content Include="Photos\SanPham\167.jpg" />
+    <Content Include="Photos\SanPham\168.jpg" />
+    <Content Include="Photos\SanPham\169.jpg" />
+    <Content Include="Photos\SanPham\17.jpg" />
+    <Content Include="Photos\SanPham\170.jpg" />
+    <Content Include="Photos\SanPham\171.jpg" />
+    <Content Include="Photos\SanPham\172.jpg" />
+    <Content Include="Photos\SanPham\173.jpg" />
+    <Content Include="Photos\SanPham\174.jpg" />
+    <Content Include="Photos\SanPham\175.jpg" />
+    <Content Include="Photos\SanPham\176.jpg" />
+    <Content Include="Photos\SanPham\177.jpg" />
+    <Content Include="Photos\SanPham\178.jpg" />
+    <Content Include="Photos\SanPham\179.jpg" />
+    <Content Include="Photos\SanPham\18.jpg" />
+    <Content Include="Photos\SanPham\180.jpg" />
+    <Content Include="Photos\SanPham\181.jpg" />
+    <Content Include="Photos\SanPham\182.jpg" />
+    <Content Include="Photos\SanPham\183.jpg" />
+    <Content Include="Photos\SanPham\184.jpg" />
+    <Content Include="Photos\SanPham\185.jpg" />
+    <Content Include="Photos\SanPham\186.jpg" />
+    <Content Include="Photos\SanPham\187.jpg" />
+    <Content Include="Photos\SanPham\188.jpg" />
+    <Content Include="Photos\SanPham\189.jpg" />
+    <Content Include="Photos\SanPham\19.jpg" />
+    <Content Include="Photos\SanPham\190.jpg" />
+    <Content Include="Photos\SanPham\191.jpg" />
+    <Content Include="Photos\SanPham\192.jpg" />
+    <Content Include="Photos\SanPham\193.jpg" />
+    <Content Include="Photos\SanPham\194.jpg" />
+    <Content Include="Photos\SanPham\195.jpg" />
+    <Content Include="Photos\SanPham\196.jpg" />
+    <Content Include="Photos\SanPham\197.jpg" />
+    <Content Include="Photos\SanPham\198.jpg" />
+    <Content Include="Photos\SanPham\199.jpg" />
+    <Content Include="Photos\SanPham\2.jpeg" />
+    <Content Include="Photos\SanPham\20.jpg" />
+    <Content Include="Photos\SanPham\200.jpg" />
+    <Content Include="Photos\SanPham\201.jpg" />
+    <Content Include="Photos\SanPham\202.jpg" />
+    <Content Include="Photos\SanPham\203.jpg" />
+    <Content Include="Photos\SanPham\204.bmp" />
+    <Content Include="Photos\SanPham\205.jpg" />
+    <Content Include="Photos\SanPham\206.jpg" />
+    <Content Include="Photos\SanPham\207.jpg" />
+    <Content Include="Photos\SanPham\208.jpg" />
+    <Content Include="Photos\SanPham\209.jpg" />
+    <Content Include="Photos\SanPham\21.jpg" />
+    <Content Include="Photos\SanPham\210.jpg" />
+    <Content Include="Photos\SanPham\211.jpg" />
+    <Content Include="Photos\SanPham\212.jpg" />
+    <Content Include="Photos\SanPham\213.jpg" />
+    <Content Include="Photos\SanPham\214.jpg" />
+    <Content Include="Photos\SanPham\215.jpg" />
+    <Content Include="Photos\SanPham\216.jpg" />
+    <Content Include="Photos\SanPham\217.jpg" />
+    <Content Include="Photos\SanPham\218.jpg" />
+    <Content Include="Photos\SanPham\219.jpg" />
+    <Content Include="Photos\SanPham\22.jpg" />
+    <Content Include="Photos\SanPham\220.jpg" />
+    <Content Include="Photos\SanPham\221.jpg" />
+    <Content Include="Photos\SanPham\222.jpg" />
+    <Content Include="Photos\SanPham\223.jpg" />
+    <Content Include="Photos\SanPham\224.jpg" />
+    <Content Include="Photos\SanPham\225.jpg" />
+    <Content Include="Photos\SanPham\226.jpg" />
+    <Content Include="Photos\SanPham\227.jpg" />
+    <Content Include="Photos\SanPham\228.jpg" />
+    <Content Include="Photos\SanPham\229.jpg" />
+    <Content Include="Photos\SanPham\23.jpg" />
+    <Content Include="Photos\SanPham\230.jpg" />
+    <Content Include="Photos\SanPham\231.jpg" />
+    <Content Include="Photos\SanPham\232.jpg" />
+    <Content Include="Photos\SanPham\233.jpg" />
+    <Content Include="Photos\SanPham\24.jpg" />
+    <Content Include="Photos\SanPham\25.jpg" />
+    <Content Include="Photos\SanPham\26.jpg" />
+    <Content Include="Photos\SanPham\27.jpg" />
+    <Content Include="Photos\SanPham\28.jpg" />
+    <Content Include="Photos\SanPham\29.jpg" />
+    <Content Include="Photos\SanPham\3.jpeg" />
+    <Content Include="Photos\SanPham\30.jpg" />
+    <Content Include="Photos\SanPham\31.jpg" />
+    <Content Include="Photos\SanPham\32.png" />
+    <Content Include="Photos\SanPham\33.jpg" />
+    <Content Include="Photos\SanPham\34.jpg" />
+    <Content Include="Photos\SanPham\35.jpg" />
+    <Content Include="Photos\SanPham\36.jpg" />
+    <Content Include="Photos\SanPham\37.jpg" />
+    <Content Include="Photos\SanPham\38.jpg" />
+    <Content Include="Photos\SanPham\39.jpg" />
+    <Content Include="Photos\SanPham\4.jpg" />
+    <Content Include="Photos\SanPham\40.jpg" />
+    <Content Include="Photos\SanPham\41.jpg" />
+    <Content Include="Photos\SanPham\42.jpg" />
+    <Content Include="Photos\SanPham\43.jpg" />
+    <Content Include="Photos\SanPham\44.jpg" />
+    <Content Include="Photos\SanPham\45.jpg" />
+    <Content Include="Photos\SanPham\46.jpg" />
+    <Content Include="Photos\SanPham\47.jpg" />
+    <Content Include="Photos\SanPham\48.jpg" />
+    <Content Include="Photos\SanPham\49.jpg" />
+    <Content Include="Photos\SanPham\5.jpeg" />
+    <Content Include="Photos\SanPham\50.jpg" />
+    <Content Include="Photos\SanPham\51.jpg" />
+    <Content Include="Photos\SanPham\52.jpg" />
+    <Content Include="Photos\SanPham\53.jpg" />
+    <Content Include="Photos\SanPham\54.jpg" />
+    <Content Include="Photos\SanPham\55.jpg" />
+    <Content Include="Photos\SanPham\56.jpg" />
+    <Content Include="Photos\SanPham\57.jpg" />
+    <Content Include="Photos\SanPham\58.jpg" />
+    <Content Include="Photos\SanPham\59.jpg" />
+    <Content Include="Photos\SanPham\6.jpeg" />
+    <Content Include="Photos\SanPham\60.jpg" />
+    <Content Include="Photos\SanPham\61.jpg" />
+    <Content Include="Photos\SanPham\62.jpg" />
+    <Content Include="Photos\SanPham\63.jpg" />
+    <Content Include="Photos\SanPham\64.jpg" />
+    <Content Include="Photos\SanPham\65.jpg" />
+    <Content Include="Photos\SanPham\66.jpg" />
+    <Content Include="Photos\SanPham\67.jpg" />
+    <Content Include="Photos\SanPham\68.jpg" />
+    <Content Include="Photos\SanPham\69.jpg" />
+    <Content Include="Photos\SanPham\7.jpg" />
+    <Content Include="Photos\SanPham\70.jpg" />
+    <Content Include="Photos\SanPham\71.jpg" />
+    <Content Include="Photos\SanPham\72.jpg" />
+    <Content Include="Photos\SanPham\73.jpg" />
+    <Content Include="Photos\SanPham\74.jpg" />
+    <Content Include="Photos\SanPham\75.jpg" />
+    <Content Include="Photos\SanPham\76.jpg" />
+    <Content Include="Photos\SanPham\77.jpg" />
+    <Content Include="Photos\SanPham\78.jpg" />
+    <Content Include="Photos\SanPham\79.jpg" />
+    <Content Include="Photos\SanPham\8.jpg" />
+    <Content Include="Photos\SanPham\80.jpg" />
+    <Content Include="Photos\SanPham\81.jpg" />
+    <Content Include="Photos\SanPham\82.jpg" />
+    <Content Include="Photos\SanPham\83.jpg" />
+    <Content Include="Photos\SanPham\84.jpg" />
+    <Content Include="Photos\SanPham\85.jpg" />
+    <Content Include="Photos\SanPham\86.jpg" />
+    <Content Include="Photos\SanPham\87.jpg" />
+    <Content Include="Photos\SanPham\88.jpg" />
+    <Content Include="Photos\SanPham\89.jpg" />
+    <Content Include="Photos\SanPham\9.jpg" />
+    <Content Include="Photos\SanPham\90.jpg" />
+    <Content Include="Photos\SanPham\91.jpg" />
+    <Content Include="Photos\SanPham\92.jpg" />
+    <Content Include="Photos\SanPham\93.jpg" />
+    <Content Include="Photos\SanPham\94.jpg" />
+    <Content Include="Photos\SanPham\95.jpg" />
+    <Content Include="Photos\SanPham\96.jpg" />
+    <Content Include="Photos\SanPham\97.jpg" />
+    <Content Include="Photos\SanPham\98.jpg" />
+    <Content Include="Photos\SanPham\99.jpg" />
+    <None Include="Properties\PublishProfiles\MVC1.pubxml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web References\WS_DienTu\DienTu.disco" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\NhapMon\MVCChao.cshtml" />
+    <Content Include="Views\NhapMon\XemDanhSach.cshtml" />
+    <Content Include="Views\NhapMon\XemDanhSachSP.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_FashionLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Shared\ThongBao.cshtml" />
+    <Content Include="Views\PhanLoai\Details.cshtml" />
+    <Content Include="Views\PhanLoai\Index.cshtml" />
+    <Content Include="Views\Demo\EXTruyenDL.cshtml" />
+    <Content Include="Views\PhanLoai\Create.cshtml" />
+    <Content Include="Views\PhanLoai\Edit.cshtml" />
+    <Content Include="Views\Shared\_MenuDynamicPartial.cshtml" />
+    <Content Include="Views\SanPham\_SanPhamMoiPartial.cshtml" />
+    <Content Include="Views\SanPham\ThongTin.cshtml" />
+    <Content Include="Views\SanPham\_SanPhamHotPartial.cshtml" />
+    <Content Include="Views\SanPham\_TuiXachMoiPartial.cshtml" />
+    <Content Include="Views\DemoHelper\EX01Display.cshtml" />
+    <Content Include="Views\DemoHelper\EX02Form.cshtml" />
+    <Content Include="Views\DemoHelper\TimKiem.cshtml" />
+    <Content Include="Views\Nhomsp\Index.cshtml" />
+    <Content Include="Views\Nhomsp\Details.cshtml" />
+    <Content Include="Views\Nhomsp\Create.cshtml" />
+    <Content Include="Views\Nhomsp\Edit.cshtml" />
+    <Content Include="Views\Nhomsp\Delete.cshtml" />
+    <Content Include="Views\BaiViet\Index.cshtml" />
+    <Content Include="Views\BaiViet\Details.cshtml" />
+    <Content Include="Views\BaiViet\Create.cshtml" />
+    <Content Include="Views\BaiViet\Edit.cshtml" />
+    <Content Include="Views\BaiViet\Delete.cshtml" />
+    <Content Include="Views\SanPham\Index.cshtml" />
+    <Content Include="Views\SanPham\Details.cshtml" />
+    <Content Include="Views\SanPham\Create.cshtml" />
+    <Content Include="Views\SanPham\Edit.cshtml" />
+    <Content Include="Views\SanPham\Delete.cshtml" />
+    <Content Include="Views\SanPham\UpLoadPhoto.cshtml" />
+    <Content Include="Views\SanPham\List.cshtml" />
+    <Content Include="Views\Shared\_HoTroOnlinePartial.cshtml" />
+    <Content Include="Views\SanPham\DanhSach.cshtml" />
+    <Content Include="Views\GioHang\DatMua.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\SanPham\_ChonMuaPartial.cshtml" />
+    <Content Include="Web References\WS_DienTu\DienTu.wsdl" />
+    <Content Include="Web References\WS_DienTu\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\WS_DienTu\vw_SanPham.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Views\DemoWebServices\Index.cshtml" />
+    <Content Include="Views\Demo17_10\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://test.alphatek.edu.vn/WS_DienTu/WebServices/DienTu.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_DienTu\</RelPath>
+      <UpdateFromURL>http://test.alphatek.edu.vn/WS_DienTu/WebServices/DienTu.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FASHIONWS_WS_DienTu_DienTu</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1111/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,26 @@
+﻿@model FASHIONWS.Models.PhanLoai
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Phân loại - Thêm</h2>
+    
+    <form id="frmPhanLoai" method="post">
+        <fieldset>
+        <legend></legend>
+        <div class="editor-label"><label for="TenPhanLoai">Phân loại ID:</label></div>
+        <div class="editor-field">
+            <input type="text" id="TenPhanLoai" name="TenPhanLoai" />
+
+        </div>
+        <p class="alignR">
+            <input type="submit" value="ghi" />
+        </p>
+    </fieldset>
+    </form>
+    
+</article>

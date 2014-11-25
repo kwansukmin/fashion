@@ -1,0 +1,22 @@
+﻿@model IList<FASHIONWS.Models.SanPham>
+
+@{
+    WebGrid grid = new WebGrid(source: Model,rowsPerPage:8);
+    string path=Url.Content("~/Photos/SanPham/");
+    }
+
+<section class="contentItem">
+    <header class="tieude borderR-tltr">@ViewBag.Message</header>
+    
+    @grid.GetHtml(tableStyle:"dshinh", mode:WebGridPagerModes.All,
+    columns: grid.Columns(
+    grid.Column(format: x => (
+        Html.Raw(
+        string.Format("<a href='{3}'><img src='{0}{1}'/>{2}</a><div>Đơn giá:{4}</div>",
+        path, //0
+        x.Hinh, //1
+        x.TenSanPham,   //2
+        Url.Action("ThongTin", "SanPham", new { id=x.SanPhamID}),    //3
+        x.DonGia    //4
+    ))))))
+</section>

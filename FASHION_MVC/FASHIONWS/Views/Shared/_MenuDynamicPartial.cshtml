@@ -1,0 +1,35 @@
+﻿@{
+    List<FASHIONWS.Models.PhanLoai>dsPhanLoai=ViewBag.PhanLoais as List<FASHIONWS.Models.PhanLoai>;
+    }
+<!-- Bài tập 5.4 -->
+        <ul class="main_nav">
+            <li>@Html.ActionLink("Trang chủ","Index","Home")</li>
+           
+            @foreach(var phanloai in dsPhanLoai)
+            {
+                   <li>@Html.ActionLink(phanloai.TenPhanLoai, "TheoLoai", "SanPham", new { id = phanloai.PhanLoaiID, name = phanloai.BiDanh }, null)
+                        <ul class="sub_nav">
+                             @foreach (var nhomsp in phanloai.Nhomsps)
+                              {
+                                <li>@Html.ActionLink(nhomsp.TenNhomsp, "TheoNhom", "SanPham", new { id = nhomsp.NhomspID, name = nhomsp.BiDanh }, null)</li>
+                             }
+                        </ul>
+                    </li>
+                }
+         
+            @*<li><a href="#">Tin tức sự kiện</a></li>*@
+            <li><a href="#">
+                Liên hệ</a>
+            </li>
+            <li>
+                @Html.ActionLink("Giỏ hàng","Index","GioHang")
+            </li>
+            <li></li>
+        </ul>
+        <div id="timkiem" >
+            <form id="frmTim"  >
+     		   		<input type="text" id="txtTim" placeholder="Tên sản phẩm"/>
+            		<input type="image" id="btnTim" title="Tìm sản phẩm" src="~/Images/Search2.png" />
+            </form>
+        </div>
+    

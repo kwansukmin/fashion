@@ -1,0 +1,26 @@
+﻿@model IList<FASHIONWS.Models.PhanLoai>
+@{
+    <!--Không dùng Viewbag Title vì Admin layout đã có-->
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!--4.5 -->
+
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">@ViewBag.Message</h2>
+    <p class="alignR">
+        @Html.ActionLink("Thêm mới","Create")
+    </p>
+
+    <ul class="dsBullet">
+        @foreach (var item in Model)
+        {    
+            <li>
+                <b>@item.TenPhanLoai</b>
+                @Html.ActionLink("Xem chi tiết","Details",new{id=item.PhanLoaiID})
+                @Html.ActionLink("Hiệu chỉnh","Edit",new{id=item.PhanLoaiID})
+            </li>
+        }
+    </ul>
+
+</article>

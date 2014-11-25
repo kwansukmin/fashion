@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/Site.css","~/Content/FormStyle.css","~/Content/wgStyle.css")
+
+    @Styles.Render("~/jquery/scrollbar/style.css","~/jquery/scrollbar/CustomScrollbar.css")
+
+    @RenderSection("styles",required:false)
+
+    @Styles.Render("~/jquery/jMenu/style.css")
+</head>
+<body>
+      <div id="mainContainer">
+        <header id="pageHeader">
+            <img src="~/Images/LogoFashion.gif" />
+            <div id="noiDungLogo">
+                <h1>Shop
+                <span>Thiên Thanh</span>
+            </h1>
+            <p>THỜI TRANG NAM NỮ</p>
+            </div>
+        </header>
+        <nav id="wrapper" class="clear borderFL">
+            @*Bai tap 3.2*@
+            @*
+            <ul class="main_nav">
+                <li>@Html.ActionLink("Trang chủ","Index","Home")</li>
+                <li><a href="#">Quần Áo Nam</a></li>
+                <li><a href="#">Quần Áo Nữ</a></li>
+                <li><a href="#">Phụ kiện thời trang</a></li>
+                
+            </ul>
+            <div id="timkiem">
+                <!--Bai tap 3.2-->
+                <form id="frmTim">
+                    <input type="text" id="txtTim" name="NoiDungTim" placeholder="Tên sản phẩm" />
+                    <input type="image" id="btnTim" title="Tìm sản phẩm" src="~/Images/Search2.png" />
+
+                </form>
+            </div>
+            *@
+
+            @Html.Action("MenuDynamic","Home") <!-- phương thức 4/6-->
+
+        </nav>
+        <section id="mainContent">
+            @RenderSection("sidebarLeft",false)
+            
+            <section id="mainContentFashion">
+                @RenderBody()
+            </section>
+
+            @RenderSection("sidebarRight",false)
+        </section>
+        <footer id="pageFooter" class="clear">
+            <!--@*Bai tap 3.4 Khai báo sử dụng Partial View*@-->
+            @Html.Partial("_FooterPartial")
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+      <!--1/ custom scroll: -->   
+    @Scripts.Render("~/jquery/scrollbar/jquery-1.9.1.min.js", "~/jquery/scrollbar/CustomScrollbar.concat.min.js")
+     <script>
+         (function ($) {
+             $(window).load(function () {
+                 $(".customScroll").mCustomScrollbar({
+                     scrollButtons: {
+                         enable: true
+                     },
+                     theme: "dark-thick"
+                 });
+             });
+         })(jQuery);
+         /*theme:"light" /*"light", "dark", "light-2", "dark-2", "light-thick", "dark-thick", "light-thin", "dark-thin" */
+      </script>
+
+    <!--5.7-->
+
+    
+    
+
+    @RenderSection("scripts",false)
+
+    @Scripts.Render("~/jquery/jMenu/simpleMenu.js")
+</body>
+</html>

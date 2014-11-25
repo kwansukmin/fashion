@@ -1,0 +1,36 @@
+﻿@model IEnumerable<FASHIONWS.Models.SanPham>
+
+@{
+    
+    string path=Url.Content("~/Photos/SanPham/");
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 15);
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    
+}
+<article class="boxRS">
+    <h2 class="border-bottom-DRed"> @ViewBag.Message</h2>
+    <p>@Html.ActionLink("Thêm Mới", "Create")</p>
+    
+
+    @grid.GetHtml(tableStyle: "wgTable", headerStyle: "wgHeader", footerStyle: "wgFooter", mode:WebGridPagerModes.All, numericLinksCount:10,
+                    columns: grid.Columns(
+                    grid.Column("SanPhamID", header: "ID", style: "alignR"),
+                    grid.Column("TenSanPham", header: "Tên sản phẩm"),
+                    grid.Column("DonGia", header: "Đơn giá", format: p => p.DonGia.ToString("#,##0VNĐ"), style: "alignR"),
+                    grid.Column("NgayCapNhat",header:"Ngày Cập Nhật",
+                        format:p=>p.NgayCapNhat.ToString("dd/MM/yyyy"), style:"alignC wgCol100"),
+                    grid.Column(
+                        format:p=>(Html.Raw(string.Format("<img src='{0}{1}' class='wh40'/>",path,p.Hinh)))),
+                    grid.Column(
+                        format: p => Html.ActionLink("Xem", "Details", new { id = p.SanPhamID })),
+                    grid.Column(
+                        format: p => Html.ActionLink("Sửa", "Edit", new { id = p.SanPhamID })),
+                    grid.Column(
+                        format: p => Html.ActionLink("Xóa", "Delete", new { id = p.SanPhamID })),
+                    grid.Column(
+                        format: p => Html.ActionLink("Upload", "UploadPhoto", new { id=p.SanPhamID}))
+
+                        
+                        
+    ))
+</article>

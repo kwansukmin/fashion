@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+
+    @RenderSection("styles",required:false)
+    @Styles.Render("~/jquery/Admin/css")
+
+    <!--Date Picker-->
+    @Styles.Render("~/Content/themes/base/css")
+
+</head>
+<body>
+    <div id="mainContainer">
+        <header id="pageHeader">
+            <img src="~/Images/LogoAdmin.jpg" />
+            <div id="noiDungLogo">
+                <h1>Shop
+                <span>Thiên Thanh</span>
+            </h1>
+            </div>
+        </header>
+        <nav id="wrapper" class="clear borderAL">
+            <!--@*Bai tap 3.1*@-->
+            <ul class="main_nav">
+                <li><a href="~/Admin/Index">Trang chủ</a></li>
+                <li><a href="~/PhanLoai/Index">Phân loại</a></li>
+                <li><a href="~/Nhomsp/Index">Nhóm sản phẩm</a></li>
+                <li><a href="~/SanPham/Index">Sản phẩm</a></li>
+                <li><a href="~/BaiViet/Index">Bài viết</a></li>
+            </ul>
+            <div id="login">
+                <!--@*Bai tap 3.1*@-->
+                <i>Xin chào<a href="#">Admin</a></i>
+                <a href="#">Đăng xuất</a>
+            </div>
+        </nav>
+        <section id="mainContentAdmin">
+            @RenderBody()
+        </section>
+        <footer id="pageFooter" class="clear">
+            <!--@*Bai tap 3.1*@-->
+            <p class="copyright">
+                &copy;&nbsp; @DateTime.Today.Year All Rights Reserved &nbsp;&bull;&nbsp; Design by Alphatek Company</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @RenderSection("scripts",false)
+    @Scripts.Render("~/bundles/jMenu")
+</body>
+</html>

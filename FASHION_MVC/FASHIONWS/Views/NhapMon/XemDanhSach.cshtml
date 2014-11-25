@@ -1,0 +1,21 @@
+﻿@model List<FASHIONWS.Models.PhanLoai>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XemDanhSach</title>
+</head>
+<body>
+    <ul>
+        @foreach(var item in Model)
+        {
+            <li>@item.TenPhanLoai</li> //In noi dung truc tiep de @ phia truoc
+        }
+    </ul>
+</body>
+</html>

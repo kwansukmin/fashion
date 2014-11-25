@@ -1,0 +1,24 @@
+﻿/* Bài tập 8.4 */ 
+.col40{ width:40px;text-align:center;}
+        .col120{ width:120px;}
+        .col300{width:300px;}
+        .col100{width:100px;}
+        
+        .col100 input[type='text'],.col120 input[type='text']{
+            text-align:center;
+            width:70px; }
+        .col40 input[type='image'],.col120 input[type='image']
+        {
+            vertical-align:bottom;
+            width:24px;
+            height:24px;
+        }
+         .row{ 
+             display:table;
+             border-bottom:1px solid #bebdb9; }
+         .row > div{float: left;}
+         .borderBD{ border-bottom:3px double #bebdb9;font-weight:bold;font-size:1em; }
+         .row form
+         {
+             display:inline;
+         }

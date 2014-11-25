@@ -1,0 +1,142 @@
+/*========================================*/
+/*========BODY STYLING FOR DEMO===========*/
+/*========================================*/
+/* Sửa */
+#wrapper{
+    width: 940px; height: 45px;
+    margin: 0 auto 20px;
+    padding: 0 20px 0 20px;
+    background:#8C0209;
+   
+    
+    /* Gradient */
+    background: -webkit-linear-gradient(#aa0514, #6e0001); /* For Safari */
+    background: -o-linear-gradient(#aa0514, #6e0001); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#aa0514, #6e0001); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#d00618, #6e0001); /* Standard syntax (must be last) */    
+}
+    .borderFL
+    {
+        -webkit-border-radius-topleft:20px;
+        -ms-border-radius-topleft:20px;
+        -o-border-top-left-radius:20px;
+        -moz-border-top-left-radius:20px;
+        border-top-left-radius:20px;
+
+       -moz-border-radius-bottomright:20px;
+        -webkit-border-radius-bottomright:20px;
+        -ms-border-radius-bottomright:20px;
+        border-bottom-right-radius:20px;
+    }
+     .borderAL
+    {
+        -webkit-border-radius:10px;
+         -o-border-radius:10px;
+         -moz-border-radius:10px;
+          -ms-border-radius:10px;
+        border-radius:10px;
+        width:920px!important;
+    
+    }
+/*========================================*/
+/*========MAIN NAV =======================*/
+/*========================================*/
+ul.main_nav {
+    margin: 0 auto;  
+    margin: 0;      /* sửa từ chổ này*/
+    padding: 0;
+    list-style: none;
+    height: 45px;
+    width:70%;
+    float:left;
+}
+ul.main_nav li {
+    border-right: 1px solid #BCBCBC;
+    float: left;
+    position: relative;
+    text-align: center;
+    margin: 0;padding: 0;
+    display: inline;  /*bổ sung*/
+    height: 40px;
+    padding-top: 5px;
+    background: -webkit-linear-gradient(#aa0514, #6e0001); /* For Safari */
+    background: -o-linear-gradient(#aa0514, #6e0001); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#aa0514, #6e0001); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#d00618, #6e0001); /* Standard syntax (must be last) */
+
+
+}
+
+ul.main_nav > li:first-child {
+    -moz-border-radius-topleft: 20px;
+    -webkit-border-top-left-radius: 20px;
+    -ms-border-radius-topleft:20px; /*thêm*/
+     border-top-left-radius:20px;
+}
+ul.main_nav > li:last-child {
+    border: none;
+    /*-moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px; */
+}
+ul.main_nav li a {
+color: #FFFFFF;
+min-width: 80px;
+    padding: 5px;
+text-decoration: none;
+display: block;
+}
+ul.main_nav li a:hover {
+    /*sửa*/
+   font-weight: bold;
+}
+/*Thêm*/
+ul.main_nav li a:active  {
+   font-weight: bold;
+}
+/*========================================*/
+/*========SUB NAV MENUS===================*/
+/*========================================*/
+ul.main_nav li ul.sub_nav {
+    position: absolute;
+    left: 0px; top: 100%;
+    display: none;/*initially hide sub menu */
+    /*bổ sung*/
+   z-index: 10000;
+  
+}
+ul.main_nav li:hover > ul {
+display: block;/*show on hover,javascript disabled */
+}
+ul.main_nav li ul.sub_nav li {
+    background: none;   /*Thêm để xóa đi định dạng của thực đơn chính*/
+    background-color: #424242;
+    border-right: none;
+    border-top: 1px solid #BCBCBC;
+    text-align: left;
+    /*bổ sung*/
+    margin-left: -40px; height: 35px;
+    padding-top: 0px;
+   
+}
+    ul.main_nav li ul.sub_nav li a
+    {
+        width:140px!important;
+    }
+ul.main_nav li ul.sub_nav li:first-child {
+border: none;
+}
+ul.main_nav li ul.sub_nav li a:hover {
+color: #FF9900;
+}
+ul.main_nav li ul.sub_nav li:last-child {
+-moz-border-bottom-right-radius: 6px;
+-moz-border-bottom-left-radius:6px;
+
+-webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+
+-o-border-bottom-right-radius: 6px;
+-o-border-bottom-left-radius :6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius :6px;
+}

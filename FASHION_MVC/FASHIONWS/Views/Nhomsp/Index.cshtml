@@ -1,0 +1,49 @@
+﻿@model IEnumerable<FASHIONWS.Models.Nhomsp>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<article class="boxRS">
+    <h2 class="border-bottom-DRed">Xem danh sách - Nhóm sản phẩm </h2>
+
+<p class="alignR">
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNhomsp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhanLoai.TenPhanLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BiDanh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNhomsp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhanLoai.TenPhanLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BiDanh)
+        </td>
+        <td>
+            @Html.ActionLink("Hiệu Chỉnh", "Edit", new { id=item.NhomspID }) |
+            @Html.ActionLink("Xem Chi Tiết", "Details", new { id=item.NhomspID }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.NhomspID })
+        </td>
+    </tr>
+}
+
+</table>
+
+</article>

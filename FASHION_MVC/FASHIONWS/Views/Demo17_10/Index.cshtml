@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@Html.RouteLink("Xem","MyRoute", new {controller="SanPham", action="ThongTin", id=123})
+
+@Html.RouteLink("Xem","Default", new {controller="SanPham", action="ThongTin", id=123})

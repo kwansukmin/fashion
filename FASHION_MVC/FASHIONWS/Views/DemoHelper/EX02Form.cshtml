@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EX02Form</title>
+</head>
+<body>
+    @using (Html.BeginForm("TimKiem","DemoHelper", method:FormMethod.Post))
+    {
+         @Html.Label("GiaTriTim","Giá trị tìm")
+        @Html.TextBox("GiaTriTim")
+
+        <input type="submit" value="Tìm" />
+        
+    }
+</body>
+</html>

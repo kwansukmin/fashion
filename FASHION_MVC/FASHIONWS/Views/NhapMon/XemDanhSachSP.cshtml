@@ -1,0 +1,25 @@
+﻿@model List<FASHIONWS.Models.SanPham>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XemDanhSachSP</title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <tr><th>ID</th><th>Tên sản phẩm</th></tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SanPhamID</td>
+                <td>@item.TenSanPham</td>
+            </tr> 
+        }
+    </table>
+</body>
+</html>

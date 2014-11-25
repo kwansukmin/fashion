@@ -1,0 +1,6 @@
+﻿@using (Html.BeginForm("Add", "GioHang", FormMethod.Post, htmlAttributes: new { @style = "display:inline" }))
+{
+    @Html.Hidden("SanPhamID",(int)Model)
+    @Html.Hidden("returnUrl",Request.Url.PathAndQuery)
+    <input type="image" src="~/Images/cart.png" title="Chọn mua hàng" />
+}

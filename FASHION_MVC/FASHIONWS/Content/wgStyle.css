@@ -1,0 +1,162 @@
+﻿
+.wgTable
+{
+    border-collapse:collapse;
+    width:100%;
+    margin:5px auto;
+}
+.wgHeader
+{
+    font-weight:bold;
+    color:#FFF;
+    /* Gradient */ 
+    background:#8C0209;
+    background: -webkit-linear-gradient(#aa0514, #6e0001); /* For Safari */
+    background: -o-linear-gradient(#aa0514, #6e0001); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#aa0514, #6e0001); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#d00618, #6e0001); /* Standard syntax (must be last) */ 
+
+     -webkit-box-shadow:0px 0px 4px 4px #c3bebe inset;
+     border:1px solid #bebdb9;
+}
+.wgFooter
+{
+    font-weight:bold;
+    background-color: #c3bebe;
+    text-align:center;
+}
+.wgTable th
+{
+     padding:4px;
+}
+.wgTable tbody tr
+{
+   border-bottom:1px solid #bebdb9;
+}
+.wgTable tbody td
+{
+     padding:4px;
+     border:1px solid #bebdb9;
+}
+.wgTable th a
+    {
+        text-decoration:none;
+        color:whitesmoke;
+    }
+    
+.wgTable th a:hover
+    {
+       color:#b6ff00;
+    }
+.wgCol300
+{
+    width:300px;
+}
+.wgCol100
+{
+    width:100px;
+}
+.wgCol80
+{
+    width:80px;
+}
+.wgCol100 input[type='text']
+{
+    text-align:center;
+    width:70px;
+}
+.wgCol40
+{
+    width:40px;
+}
+.wgCol100 input[type='image']
+{
+    vertical-align:bottom;
+    width:26px;
+    height:24px;
+}
+
+.dshinh{
+    border-width: 0px; border-collapse: collapse;
+    width:100%;
+    font-size:0.875em;
+    padding:0px;
+    background-color:white;
+}
+dshinh *{
+    margin:0px;padding:0px;
+}
+    .dshinh tbody
+    {
+       
+        border:1px solid #c3bebe;
+    }
+
+    .dshinh tbody tr,.dshinh tbody td{
+        float:left;
+        width:186px;
+        height:245px;
+       
+    }
+    
+.dshinh td{vertical-align: top;text-align: center; color: #8c0209;}
+.dshinh tbody td a
+{
+    display:block;
+    margin-top:5px;
+}
+.dshinh tbody td a:hover{
+    font-weight: bold;
+}
+.dshinh tbody td a>img{
+    margin:0px;
+    width:182px;
+    height:165px;
+    border:1px solid silver;
+}
+.dshinh input[type="image"]{
+    width: 25px; height:20px;
+}
+#addCart
+{
+     width:25px; height:20px;
+}
+.dshinh tbody td a[rel="example_group"]
+{
+    height:165px;
+}
+.dshinh tbody td div
+{
+    text-align:right;padding:3px;
+}
+.h200
+{
+     height:200px;
+}
+
+.dshinh tfoot tr, .dshinh tfoot td
+{
+    display:block;
+    width:99.8%;
+    background-color:#BBBBBB;
+    
+    border-top:1px solid #8C0209;
+    
+
+    -moz-border-bottom-right-radius: 6px;
+-moz-border-bottom-left-radius:6px;
+
+-webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+
+-o-border-bottom-right-radius: 6px;
+-o-border-bottom-left-radius :6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius :6px;
+}
+
+.wh40
+{
+    height:40px;
+    width:40px;
+}
